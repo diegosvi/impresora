@@ -13,7 +13,7 @@ class OficinaFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,7 @@ class OficinaFormRequest extends Request
     {
         return [
             //
+            'detalle' => 'required|unique:oficinas,detalle'
         ];
     }
 }

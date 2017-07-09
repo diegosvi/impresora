@@ -13,7 +13,7 @@ class ModeloCartuchoFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,7 @@ class ModeloCartuchoFormRequest extends Request
     {
         return [
             //
+            'detalle' => 'required|unique:modelo_cartuchos,detalle'
         ];
     }
 }
