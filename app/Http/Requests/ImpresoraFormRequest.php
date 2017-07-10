@@ -13,7 +13,7 @@ class ImpresoraFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,14 @@ class ImpresoraFormRequest extends Request
     {
         return [
             //
+        'idmodelo_impresoras' => 'required',
+        'numeroserie' => 'required',
+        'ipimpresora' => 'required|max:15',
+        'macimpresora' => 'required',
+        'fechacompra' => 'max:10',
+        'observacion' => 'max:512'
+        
+
         ];
     }
 }

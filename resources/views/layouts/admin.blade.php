@@ -91,30 +91,30 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li><a href="inven/area"><i class="fa fa-circle-o"></i> Area</a></li>
+                <li><a href="almacen/oficina"><i class="fa fa-circle-o"></i> Oficinas</a></li>
               </ul>
             </li>
             
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Compras</span>
+                <span>Impresoras</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
+                <li><a href="almacen/modeloimpresora"><i class="fa fa-circle-o"></i> Modelo Impresoras</a></li>
                 <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-shopping-cart"></i>
-                <span>Ventas</span>
+                <span>Cartuchos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                <li><a href="almacen/modelocartucho"><i class="fa fa-circle-o"></i> Modelo Cartuchos</a></li>
                 <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
@@ -129,7 +129,7 @@
                 
               </ul>
             </li>
-              <li><a href="inven/area"><i class="fa fa-circle-o"></i> Área</a></li>
+              <li><a href="inven/area"><i class="fa fa-circle-o"></i> Impresiones</a></li>
             <li>
               <a href="#">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
@@ -157,7 +157,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Areas</h3>
+                  <h3 class="box-title">Inventario</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     

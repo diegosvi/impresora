@@ -19,3 +19,4 @@ Route::resource('inven/area','AreaController');
 Route::resource('inven/oficina','OficinaController');
 Route::resource('inven/modeloimpresora','ModeloImpresoraController');
 Route::resource('inven/modelocartucho','ModeloCartuchoController');
+Route::resource('inven/impresora','ImpresoraController');
