@@ -13,7 +13,7 @@ class CartuchoFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,12 @@ class CartuchoFormRequest extends Request
     {
         return [
             //
+        'idmodelo_cartuchos' => 'required',
+        'codigointerno' => 'required',
+        'contadorinicialrecarga' => 'required|max:15',
+        'fechacompra' => 'max:10',
+        'numerofactura' => 'required',
+        'observacion' => 'max:512'
         ];
     }
 }

@@ -13,7 +13,7 @@ class ImpresionFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,14 @@ class ImpresionFormRequest extends Request
     {
         return [
             //
+        'idimpresoras'=> 'required',
+        'fechainicioimpresion'=> 'required|max:10',
+        'fechafinimpresion'=> 'required|max:10',
+        'contadorinicioimpresion'=> 'required',
+        'contadorfinimpresion'=> 'required',
+        'difconinifinimpresion'=> 'required',
+        'observacion'=> 'max:512'
+
         ];
     }
 }

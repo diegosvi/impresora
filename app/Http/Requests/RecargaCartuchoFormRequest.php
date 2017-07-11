@@ -13,7 +13,7 @@ class RecargaCartuchoFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,14 @@ class RecargaCartuchoFormRequest extends Request
     {
         return [
             //
+        'idcartuchos' => 'required',
+        'numerorecarga' => 'required',
+        'fechainiciorecarga' => 'required|max:10',
+        'fechafinrecarga' => 'required|max:10',
+        'contadoriniciorecarga' => 'required',
+        'contadorfinrecarga' => 'required',
+        'difcontinifinrecarga' => 'required',
+        'observacion' => 'max:512'
         ];
     }
 }

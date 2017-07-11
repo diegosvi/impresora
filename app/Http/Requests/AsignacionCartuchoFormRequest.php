@@ -13,7 +13,7 @@ class AsignacionCartuchoFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,7 @@ class AsignacionCartuchoFormRequest extends Request
     {
         return [
             //
+        'fechaasignacion' => 'required|max:10'
         ];
     }
 }

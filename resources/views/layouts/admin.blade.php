@@ -87,7 +87,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Almacén</span>
+                <span>Cooperativa</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -104,7 +104,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="almacen/modeloimpresora"><i class="fa fa-circle-o"></i> Modelo Impresoras</a></li>
-                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="compras/impresora"><i class="fa fa-circle-o"></i> Impresoras</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -114,8 +114,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/modelocartucho"><i class="fa fa-circle-o"></i> Modelo Cartuchos</a></li>
-                <li><a href="ventas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                <li><a href="inven/modelocartucho"><i class="fa fa-circle-o"></i> Modelo Cartuchos</a></li>
+                <li><a href="inven/cartucho"><i class="fa fa-circle-o"></i> Cartuchos</a></li>
               </ul>
             </li>
                        
@@ -129,7 +129,7 @@
                 
               </ul>
             </li>
-              <li><a href="inven/area"><i class="fa fa-circle-o"></i> Impresiones</a></li>
+              <li><a href="inven/impresion"><i class="fa fa-circle-o"></i> Impresiones</a></li>
             <li>
               <a href="#">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
