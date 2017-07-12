@@ -13,6 +13,8 @@ class AsignacionCartucho extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'idimpresoras',
+        'idcartuchos',
     	'fechaasignacion'
     ];
 

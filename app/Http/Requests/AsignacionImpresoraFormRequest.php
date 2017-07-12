@@ -13,7 +13,7 @@ class AsignacionImpresoraFormRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,10 @@ class AsignacionImpresoraFormRequest extends Request
     {
         return [
             //
+        'idareas' => 'required',
+        'idoficinas' => 'required',
+        'idimpresoras'=> 'required',
+        'fechaasignacion' => 'required|max:10'
         ];
     }
 }

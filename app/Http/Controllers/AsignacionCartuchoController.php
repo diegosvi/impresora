@@ -23,63 +23,59 @@ class AsignacionCartuchoController extends Controller
     {
         if ($request){
             $query=trim ($request-> get('searchText'));
-            $asignacioncartucho=DB::table('asignacioncartuchos as ac')
-            //->join('modelo_cartuchos as mc','c.idmodelo_cartuchos','=','mc.idmodelo_cartuchos')
-            ->select('c.idcartuchos','mc.detalle as modelocartucho','c.codigointerno','c.contadorinicialrecarga','c.fechacompra','c.numerofactura','c.estado','c.observacion')
+            $asignacioncartucho=DB::table('asignacion_cartuchos as ac')
+            ->join('impresoras as i','ac.idimpresoras','=','i.idimpresoras')
+            ->join('cartuchos as c','ac.idcartuchos','=','c.idcartuchos')
+            ->select('ac.idasignacion_cartuchos','i.ipimpresora as impresora','c.codigointerno as cartucho','ac.fechaasignacion')
             ->where(
-                'c.codigointerno','LIKE','%'.$query.'%')
-            ->orwhere(
-                'c.fechacompra','LIKE','%'.$query.'%')
-            ->orderBy('c.idcartuchos','asc')->paginate(7);
-            return view ('inven.cartucho.index',["cartuchos"=>$cartucho, "searchText"=>$query]);
+                'ac.fechaasignacion','LIKE','%'.$query.'%')
+            ->orderBy('ac.idasignacion_cartuchos','asc')
+            //->groupBy('ac.idasignacion_cartuchos','i.ipimpresora as impresora','c.codigointerno as cartucho','ac.fechaasignacion')
+            ->paginate(7);
+            return view ('inven.asignacioncartucho.index',["asignacioncartuchos"=>$asignacioncartucho, "searchText"=>$query]);
         }
     }
 
     public function create (){
-    	$modelocartucho=DB::table('modelo_cartuchos')->where('condicion','=','1')->get();
-        return view("inven.cartucho.create",["modelocartuchos"=>$modelocartucho]);
+        $impresora=DB::table('impresoras')->where('estado','=','activo')->get();
+        $cartucho=DB::table('cartuchos')->where('estado','=','activo')->get();
+        return view("inven.asignacioncartucho.create",["impresoras"=>$impresora,"cartuchos"=>$cartucho]);
     }
 
-    public function store (CartuchoFormRequest $request){
-        $cartucho= new Cartucho;
-        $cartucho->idmodelo_cartuchos=$request->get('idmodelo_cartuchos');
-        $cartucho->codigointerno=$request->get('codigointerno');
-        $cartucho->contadorinicialrecarga=$request->get('contadorinicialrecarga');
-        $cartucho->fechacompra=$request->get('fechacompra');
-        $cartucho->numerofactura=$request->get('numerofactura');
-        $cartucho->estado='activo';
-        $cartucho->observacion=$request->get('observacion');
-        $cartucho->save();
-        return Redirect::to('inven/cartucho');
+    public function store (AsignacionCartuchoFormRequest $request){
+        $asignacioncartucho= new AsignacionCartucho;
+        $asignacioncartucho->idimpresoras=$request->get('idimpresoras');
+        $asignacioncartucho->idcartuchos=$request->get('idcartuchos');
+        $asignacioncartucho->fechaasignacion=$request->get('fechaasignacion');
+        $asignacioncartucho->save();
+        return Redirect::to('inven/asignacioncartucho');
     }
 
     public function show ($id){
-        return view ("inven.cartucho.show",["cartucho"=>Cartucho::findOrFail($id)]);
+        return view ("inven.asignacioncartucho.show",["asignacioncartucho"=>AsignacionCartucho::findOrFail($id)]);
     }
 
     public function edit ($id){
-    	$cartucho=Cartucho::findOrFail($id);
-    	$modelocartucho=DB::table('modelo_cartuchos')->where('condicion','=','1')->get();
-        return view("inven.cartucho.edit",["cartucho"=>$cartucho, "modelocartuchos"=>$modelocartucho]);
+    	$asignacioncartucho=AsignacionCartucho::findOrFail($id);
+    	 $impresora=DB::table('impresoras')->where('estado','=','activo')->get();
+        $cartucho=DB::table('cartuchos')->where('estado','=','activo')->get();
+        return view("inven.asignacioncartucho.create",["impresoras"=>$impresora,"cartuchos"=>$cartucho]);
     }
 
-    public function update (CartuchoFormRequest $request,$id){
-        $cartucho=Cartucho::findOrFail($id);
+    public function update (AsignacionCartuchoFormRequest $request,$id){
+        $asignacioncartucho=AsignacionCartucho::findOrFail($id);
         
-        $cartucho->idmodelo_cartuchos=$request->get('idmodelo_cartuchos');
-        $cartucho->codigointerno=$request->get('codigointerno');
-        $cartucho->contadorinicialrecarga=$request->get('contadorinicialrecarga');
-        $cartucho->fechacompra=$request->get('fechacompra');
-        $cartucho->numerofactura=$request->get('numerofactura');
-        $cartucho->observacion=$request->get('observacion');
-        $cartucho->save();
-        return Redirect::to('inven/cartucho');
+        $asignacioncartucho->idimpresoras=$request->get('idimpresoras');
+        $asignacioncartucho->idcartuchos=$request->get('idcartuchos');
+        $asignacioncartucho->fechaasignacion=$request->get('fechaasignacion');
+        $asignacioncartucho->save();
+        return Redirect::to('inven/asignacioncartucho');
     }
 
     public function destroy ($id){
-        $cartucho=Cartucho::findOrFail($id);
-        $cartucho->estado='inactivo';
-        $cartucho->update();
-        return Redirect::to('inven/cartucho');
+        $asignacioncartucho=AsignacionCartucho::findOrFail($id);
+        //$asignacioncartucho->estado='inactivo';
+        $asignacioncartucho->update();
+        return Redirect::to('inven/asignacioncartucho');
     }
 }

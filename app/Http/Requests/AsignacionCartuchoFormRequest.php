@@ -25,6 +25,8 @@ class AsignacionCartuchoFormRequest extends Request
     {
         return [
             //
+        'idimpresoras'=> 'required',
+        'idcartuchos' => 'required',
         'fechaasignacion' => 'required|max:10'
         ];
     }

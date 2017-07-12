@@ -23,3 +23,5 @@ Route::resource('inven/impresora','ImpresoraController');
 Route::resource('inven/cartucho','CartuchoController');
 Route::resource('inven/recargacartucho','RecargaCartuchoController');
 Route::resource('inven/impresion','ImpresionController');
+Route::resource('inven/asignacioncartucho','AsignacionCartuchoController');
+Route::resource('inven/asignacionimpresora','AsignacionImpresoraController');
