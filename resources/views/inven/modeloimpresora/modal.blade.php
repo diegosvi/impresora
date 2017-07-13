@@ -7,10 +7,10 @@ role="dialog" tabindex="-1" id="modal-delete-{{$modeloimpresora->idmodelo_impres
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">x</span>
 				</button>
-				<h4 class="modal-title">Eliminar Categoría</h4>
+				<h4 class="modal-title">Eliminar Modelo Impresora</h4>
 			</div>
 			<div class="modal-body">
-				<p>Confirme si desea Eliminar la Categoría</p>
+				<p>Confirme si desea eliminar el Modelo Impresora</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

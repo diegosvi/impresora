@@ -59,7 +59,7 @@ class AsignacionCartuchoController extends Controller
     	$asignacioncartucho=AsignacionCartucho::findOrFail($id);
     	 $impresora=DB::table('impresoras')->where('estado','=','activo')->get();
         $cartucho=DB::table('cartuchos')->where('estado','=','activo')->get();
-        return view("inven.asignacioncartucho.create",["impresoras"=>$impresora,"cartuchos"=>$cartucho]);
+        return view("inven.asignacioncartucho.edit",["asignacioncartucho"=>$asignacioncartucho,"impresoras"=>$impresora,"cartuchos"=>$cartucho]);
     }
 
     public function update (AsignacionCartuchoFormRequest $request,$id){
@@ -75,7 +75,9 @@ class AsignacionCartuchoController extends Controller
     public function destroy ($id){
         $asignacioncartucho=AsignacionCartucho::findOrFail($id);
         //$asignacioncartucho->estado='inactivo';
-        $asignacioncartucho->update();
+        //$asignacioncartucho->update();
+        $asignacioncartucho->delete();
+        AsignacionCartucho::destroy($id);
         return Redirect::to('inven/asignacioncartucho');
     }
 }

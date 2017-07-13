@@ -71,6 +71,6 @@
 
 
 			
-			{{!!Form::close()!!}}
+			{!!Form::close()!!}
 
 @endsection	

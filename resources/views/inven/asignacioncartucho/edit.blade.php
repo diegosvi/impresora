@@ -2,7 +2,7 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Editar Área: {{$modelocartucho->detalle}}</h3>
+			<h3>Editar Asignacion Cartucho: {{$asignacioncartucho->fechaasignacion}}</h3>
 			@if (count ($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -24,7 +24,7 @@
 				<label >Impresora</label>
 				<select name="idimpresoras" class="form-control">
 					@foreach ($impresoras as $impresora)
-						<option value="{{$impresora->idimpresoras}}">{{$impresora->detalle}}</option>
+						<option value="{{$impresora->idimpresoras}}">{{$impresora->ipimpresora}}</option>
 					@endforeach
 				</select>
 			</div>
@@ -43,7 +43,7 @@
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label for="fechaasignacion">Fecha Asignacion</label>
-				<input type="text" name="fechaasignacion"  value="{{old('fechaasignacion')}}" class="form-control" placeholder="Fecha Asignacion">
+				<input type="text" name="fechaasignacion" value="{{$asignacioncartucho->fechaasignacion}}" class="form-control">
 			</div>
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -53,6 +53,6 @@
 			</div>
 		</div>
 	</div>
-			{{!!Form::close()!!}}
+			{!!Form::close()!!}
 	
 @endsection	

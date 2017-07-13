@@ -63,7 +63,7 @@ class AsignacionImpresoraController extends Controller
     	$area=DB::table('areas')->where('condicion','=','1')->get();
     	$oficina=DB::table('oficinas')->where('condicion','=','1')->get();
     	 $impresora=DB::table('impresoras')->where('estado','=','activo')->get();
-        return view("inven.asignacionimpresora.create",["areas"=>$area,"oficinas"=>$oficina,"impresoras"=>$impresora]);
+        return view("inven.asignacionimpresora.edit",["asignacionimpresora"=>$asignacionimpresora,"areas"=>$area,"oficinas"=>$oficina,"impresoras"=>$impresora]);
     }
 
     public function update (AsignacionImpresoraFormRequest $request,$id){
@@ -80,7 +80,9 @@ class AsignacionImpresoraController extends Controller
     public function destroy ($id){
         $asignacionimpresora=AsignacionImpresora::findOrFail($id);
         //$asignacioncartucho->estado='inactivo';
-        $asignacionimpresora->update();
+        //$asignacionimpresora->update();
+        $asignacionimpresora->delete();
+        AsignacionImpresora::destroy($id);
         return Redirect::to('inven/asignacionimpresora');
     }
 }

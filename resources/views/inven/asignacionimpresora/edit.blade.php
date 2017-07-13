@@ -55,7 +55,7 @@
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label for="fechaasignacion">Fecha Asignacion</label>
-				<input type="text" name="fechaasignacion"  value="{{old('fechaasignacion')}}" class="form-control" placeholder="Fecha Asignacion">
+				<input type="text" name="fechaasignacion"  value="{{$asignacionimpresora->fechaasignacion}}" class="form-control">
 			</div>
 		</div>
 
@@ -66,6 +66,6 @@
 			</div>
 		</div>
 	</div>
-			{{!!Form::close()!!}}
+			{!!Form::close()!!}
 	
 @endsection	

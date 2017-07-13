@@ -29,7 +29,7 @@ class CartuchoFormRequest extends Request
         'codigointerno' => 'required',
         'contadorinicialrecarga' => 'required|max:15',
         'fechacompra' => 'max:10',
-        'numerofactura' => 'required',
+        'numerofactura' => 'max:10',
         'observacion' => 'max:512'
         ];
     }

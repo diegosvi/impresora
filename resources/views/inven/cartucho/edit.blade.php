@@ -22,7 +22,7 @@
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label >Modelo Cartucho</label>
-				<select name="idmodelo_cartuchoss" class="form-control">
+				<select name="idmodelo_cartuchos" class="form-control">
 					@foreach ($modelocartuchos as $modelocartucho)
 						@if ($modelocartucho->idmodelo_cartuchos==$cartucho->idmodelo_cartuchos)
 						<option value="{{$modelocartucho->idmodelo_cartuchos}}" selected>{{$modelocartucho->detalle}}</option>
@@ -41,7 +41,7 @@
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
-				<label for="contadorinicialrecarga">IP Impresora</label>
+				<label for="contadorinicialrecarga">Contador Incial</label>
 				<input type="text" name="contadorinicialrecarga"  value="{{$cartucho->contadorinicialrecarga}}" class="form-control">
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
-				<label for="numerofactura">MAC Impresora</label>
+				<label for="numerofactura">Numero Factura</label>
 				<input type="text" name="numerofactura" value="{{$cartucho->numerofactura}}" class="form-control">
 			</div>
 		</div>
@@ -73,6 +73,6 @@
 
 	</div>
 		
-			{{!!Form::close()!!}}
+			{!!Form::close()!!}
 	
 @endsection	

@@ -37,7 +37,7 @@
 						<td>{{$recargacartucho->observacion}}</td>
 						<td>
 							<a href="{{URL::action('RecargaCartuchoController@edit', $recargacartucho->idrecarga_cartuchos)}}"><button class="btn btn-info">Editar</button></a>
-							<a href="" data-target="#modal-delete-{{$recargacartucho->idrecarga_cartuchos}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+							<!--<a href="" data-target="#modal-delete-{{$recargacartucho->idrecarga_cartuchos}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>-->
 						</td>
 					</tr>
 				@include('inven.recargacartucho.modal')

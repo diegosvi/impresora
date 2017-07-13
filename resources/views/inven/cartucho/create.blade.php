@@ -50,7 +50,7 @@
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label for="numerofactura">Numero Factura</label>
-				<input type="text" name="numerofactura" required value="{{old('numerofactura')}}" class="form-control" placeholder="Numero Factura">
+				<input type="text" name="numerofactura" value="{{old('numerofactura')}}" class="form-control" placeholder="Numero Factura">
 			</div>
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -71,6 +71,6 @@
 
 
 			
-			{{!!Form::close()!!}}
+			{!!Form::close()!!}
 
 @endsection	

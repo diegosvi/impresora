@@ -35,7 +35,7 @@
 						<td>{{$impresion->observacion}}</td>
 						<td>
 							<a href="{{URL::action('ImpresionController@edit', $impresion->idimpresions)}}"><button class="btn btn-info">Editar</button></a>
-							<a href="" data-target="#modal-delete-{{$impresion->idimpresions}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+							<!--<a href="" data-target="#modal-delete-{{$impresion->idimpresions}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>-->
 						</td>
 					</tr>
 				@include('inven.impresion.modal')
