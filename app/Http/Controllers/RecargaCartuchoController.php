@@ -25,11 +25,12 @@ class RecargaCartuchoController extends Controller
             $query=trim ($request-> get('searchText'));
             $recargacartucho=DB::table('recarga_cartuchos as rc')
             ->join('cartuchos as c','rc.idcartuchos','=','c.idcartuchos')
-            ->select('rc.idrecarga_cartuchos','c.codigointerno as cartucho','rc.numerorecarga','rc.fechainiciorecarga','rc.fechafinrecarga','rc.contadoriniciorecarga','rc.contadorfinrecarga','rc.difcontinifinrecarga','rc.observacion')
+            ->select('rc.idrecarga_cartuchos','c.codigointerno as cartucho','rc.numerorecarga','rc.fechainiciorecarga','rc.fechafinrecarga','rc.contadoriniciorecarga','rc.contadorfinrecarga','rc.difcontinifinrecarga','rc.observacion',DB::raw('sum(rc.contadorfinrecarga-contadoriniciorecarga) as difcontinifinrecarga '))
             ->where(
                 'c.codigointerno','LIKE','%'.$query.'%')
-            //->orwhere(                'rc.fechacompra','LIKE','%'.$query.'%')
-            ->orderBy('rc.idrecarga_cartuchos','asc')->paginate(7);
+            ->orwhere('rc.fechainiciorecarga','LIKE','%'.$query.'%')
+            ->orderBy('rc.idrecarga_cartuchos','asc')
+            ->groupBy('rc.idrecarga_cartuchos','c.codigointerno','rc.numerorecarga','rc.fechainiciorecarga','rc.fechafinrecarga','rc.contadoriniciorecarga','rc.contadorfinrecarga','rc.difcontinifinrecarga','rc.observacion')->paginate(7);
             return view ('inven.recargacartucho.index',["recargacartuchos"=>$recargacartucho, "searchText"=>$query]);
         }
     }

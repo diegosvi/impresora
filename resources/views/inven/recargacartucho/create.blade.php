@@ -62,7 +62,7 @@
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label for="difcontinifinrecarga">Diferencia Contador</label>
-				<input type="text" name="difcontinifinrecarga" required value="{{old('difcontinifinrecarga')}}" class="form-control" placeholder="Diferencia Contador">
+				<input type="text" name="difcontinifinrecarga" value="{{old('difcontinifinrecarga')}}" class="form-control" placeholder="Diferencia Contador">
 			</div>
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -83,6 +83,6 @@
 
 
 			
-			{{!!Form::close()!!}}
+			{!!Form::close()!!}
 
 @endsection	

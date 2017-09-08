@@ -30,7 +30,7 @@ class ImpresionFormRequest extends Request
         'fechafinimpresion'=> 'required|max:10',
         'contadorinicioimpresion'=> 'required',
         'contadorfinimpresion'=> 'required',
-        'difconinifinimpresion'=> 'required',
+        'difconinifinimpresion'=> '',
         'observacion'=> 'max:512'
 
         ];

@@ -1,4 +1,4 @@
-modal.blade.php<div class="modal fade modal-slide-in-right" aria-hidden="true"
+<div class="modal fade modal-slide-in-right" aria-hidden="true"
 role="dialog" tabindex="-1" id="modal-delete-{{$asignacioncartucho->idasignacion_cartuchos}}">
 	{{Form::Open(array('action'=> array('AsignacionCartuchoController@destroy',$asignacioncartucho->idasignacion_cartuchos),'method'=>'delete'))}}
 	<div class="modal-dialog">

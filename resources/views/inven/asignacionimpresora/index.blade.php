@@ -14,8 +14,8 @@
 				<thead>
 					<th>Id</th>
 					<th>Id Areas</th>
-					<th>Id Cartuchos</th>
 					<th>Id Oficinas</th>
+					<th>Id Imppresora</th>
 					<th>Fecha Asignacion</th>
 				</thead>
 

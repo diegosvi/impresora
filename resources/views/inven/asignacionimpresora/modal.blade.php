@@ -1,4 +1,4 @@
-modal.blade.php<div class="modal fade modal-slide-in-right" aria-hidden="true"
+<div class="modal fade modal-slide-in-right" aria-hidden="true"
 role="dialog" tabindex="-1" id="modal-delete-{{$asignacionimpresora->idasignacion_impresoras}}">
 	{{Form::Open(array('action'=> array('AsignacionImpresoraController@destroy',$asignacionimpresora->idasignacion_impresoras),'method'=>'delete'))}}
 	<div class="modal-dialog">

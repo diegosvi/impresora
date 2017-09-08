@@ -24,11 +24,13 @@ class ImpresionController extends Controller
             $query=trim ($request-> get('searchText'));
             $impresion=DB::table('impresions as im')
             ->join('impresoras as i','im.idimpresoras','=','i.idimpresoras')
-            ->select('im.idimpresions','i.ipimpresora as impresora','im.fechainicioimpresion','im.fechafinimpresion','im.contadorinicioimpresion','im.contadorfinimpresion','im.difconinifinimpresion','im.observacion')
+            ->select('im.idimpresions','i.ipimpresora as impresora','im.fechainicioimpresion','im.fechafinimpresion','im.contadorinicioimpresion','im.contadorfinimpresion','im.difconinifinimpresion','im.observacion',DB::raw('sum(im.contadorfinimpresion-contadorinicioimpresion)as difconinifinimpresion '))
             ->where(
                 'i.ipimpresora','LIKE','%'.$query.'%')
             ->orwhere('im.fechainicioimpresion','LIKE','%'.$query.'%')
-            ->orderBy('im.idimpresions','asc')->paginate(7);
+            ->orderBy('im.idimpresions','asc')
+            ->groupBy('im.idimpresions','i.ipimpresora','im.fechainicioimpresion','im.fechafinimpresion','im.contadorinicioimpresion','im.contadorfinimpresion','im.difconinifinimpresion','im.observacion')
+            ->paginate(7);
             return view ('inven.impresion.index',["impresions"=>$impresion, "searchText"=>$query]);
         }
     }

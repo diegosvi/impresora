@@ -25,7 +25,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ url('inven/area') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>LDV</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -54,8 +54,7 @@
                   <li class="user-header">
                     
                     <p>
-                      www.incanatoit.com - Desarrollando Software
-                      <small>www.youtube.com/jcarlosad7</small>
+                      www.luzdelvalle.fin.ec - Coopertiva de Ahorro y Credito
                     </p>
                   </li>
                   
@@ -91,49 +90,51 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{!! url('inven/area') !!}><i class="fa fa-circle-o"></i> Area</a></li>
-                <li><a href="almacen/oficina"><i class="fa fa-circle-o"></i> Oficinas</a></li>
+                <li><a href="{{ url('inven/area') }}"><i class="fa fa-circle-o"></i> Area</a></li>
+                <li><a href="{{ url('inven/oficina') }}"><i class="fa fa-circle-o"></i> Oficinas</a></li>
               </ul>
             </li>
             
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-th"></i>
+                <i class="fa fa-print"></i>
                 <span>Impresoras</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/modeloimpresora"><i class="fa fa-circle-o"></i> Modelo Impresoras</a></li>
-                <li><a href="compras/impresora"><i class="fa fa-circle-o"></i> Impresoras</a></li>
+                <li><a href="{{ url('inven/modeloimpresora') }}"><i class="fa fa-circle-o"></i> Modelo Impresoras</a></li>
+                <li><a href="{{ url('inven/impresora') }}"><i class="fa fa-circle-o"></i> Impresoras</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-shopping-cart"></i>
+                <i class="fa fa-tint"></i>
                 <span>Cartuchos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="inven/modelocartucho"><i class="fa fa-circle-o"></i> Modelo Cartuchos</a></li>
-                <li><a href="inven/cartucho"><i class="fa fa-circle-o"></i> Cartuchos</a></li>
+                <li><a href="{{ url('inven/modelocartucho') }}"><i class="fa fa-circle-o"></i> Modelo Cartuchos</a></li>
+                <li><a href="{{ url('inven/cartucho') }}"><i class="fa fa-circle-o"></i> Cartuchos</a></li>
               </ul>
             </li>
                        
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
+                <i class="fa fa-folder"></i> <span>Asignacion</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                
+                <li><a href="{{ url('inven/asignacioncartucho') }}"><i class="fa fa-circle-o"></i> Asignacion Cartucho</a></li>
+                <li><a href="{{ url('inven/asignacionimpresora') }}"><i class="fa fa-circle-o"></i> Asignacion Impresora</a></li>
               </ul>
             </li>
-              <li><a href="inven/impresion"><i class="fa fa-circle-o"></i> Impresiones</a></li>
+              <li><a href="{{ url('inven/impresion') }}"><i class="fa fa-file"></i> Impresiones</a></li>
+              <li><a href="{{ url('inven/recargacartucho') }}"><i class="fa fa-filter"></i> Recarga Cartuchos</a></li>
+
             <li>
-              <a href="#">
+              <a href="https://www.luzdelvalle.fin.ec/">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
+                <small class="label pull-right bg-yellow">LDV</small>
               </a>
             </li>
                         
@@ -184,9 +185,9 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
+          <b>Version</b> 1.0.0
         </div>
-        <strong>Copyright &copy; 2017 <a href="www.incanatoit.com">LDV</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017 <a href="https://www.luzdelvalle.fin.ec/">LDV</a>.</strong> All rights reserved.
       </footer>
 
       

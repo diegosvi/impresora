@@ -30,6 +30,12 @@ class AsignacionImpresoraController extends Controller
             ->select('ai.idasignacion_impresoras','a.detalle as area','o.detalle as oficina','i.ipimpresora as impresora','ai.fechaasignacion')
             ->where(
                 'ai.fechaasignacion','LIKE','%'.$query.'%')
+            ->orwhere(
+                'a.detalle','LIKE','%'.$query.'%')
+            ->orwhere(
+                'o.detalle','LIKE','%'.$query.'%')
+            ->orwhere(
+                'i.ipimpresora','LIKE','%'.$query.'%')
             ->orderBy('ai.idasignacion_impresoras','asc')
             //->groupBy('ac.idasignacion_cartuchos','i.ipimpresora as impresora','c.codigointerno as cartucho','ac.fechaasignacion')
             ->paginate(7);

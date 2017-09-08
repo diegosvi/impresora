@@ -31,7 +31,7 @@ class RecargaCartuchoFormRequest extends Request
         'fechafinrecarga' => 'required|max:10',
         'contadoriniciorecarga' => 'required',
         'contadorfinrecarga' => 'required',
-        'difcontinifinrecarga' => 'required',
+        'difcontinifinrecarga' => '',
         'observacion' => 'max:512'
         ];
     }
